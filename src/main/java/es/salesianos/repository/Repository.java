@@ -24,9 +24,8 @@ public class Repository {
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = conn
-					.prepareStatement("INSERT INTO ACTOR (cod,name,yearOfBirthDate)" + "VALUES (?, ?, ?)");
-			preparedStatement.setInt(1, actor.getCod());
-			preparedStatement.setString(2, actor.getNombre());
+					.prepareStatement("INSERT INTO ACTOR (name,yearOfBirthDate)" + "VALUES (?, ?)");
+			preparedStatement.setString(1, actor.getNombre());
 			preparedStatement.setInt(2, actor.getYear());
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
@@ -142,9 +141,9 @@ public class Repository {
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
 				Actor actor = new Actor();
-				actor.setCod(resultSet.getInt(0));
-				actor.setNombre(resultSet.getNString(0));
-				actor.setYear(resultSet.getInt(2));
+				actor.setCod(resultSet.getInt(1));
+				actor.setNombre(resultSet.getNString(2));
+				actor.setYear(resultSet.getInt(3));
 				list.add(actor);
 			}
 			
