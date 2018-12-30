@@ -169,8 +169,8 @@ public class Repository {
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
 				Director director = new Director();
-				director.setCod(resultSet.getInt(0));
-				director.setNombre(resultSet.getNString(0));
+				director.setCod(resultSet.getInt(1));
+				director.setNombre(resultSet.getString(2));
 				list.add(director);
 			}
 			

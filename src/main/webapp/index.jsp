@@ -12,6 +12,7 @@
 
 <div>
 	<a href="/pelicula">Peliculas:</a>
+	<a href="/director">Actores:</a>
 </div>
 
 
