@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import es.salesianos.model.Actor;
 import es.salesianos.model.Pelicula;
+import es.salesianos.model.assembler.PeliculaAssembler;
 import es.salesianos.service.Service;
 import es.salesianos.service.Service;
 
@@ -23,15 +24,7 @@ public class PeliculaServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String codString = req.getParameter("cod");
-		String title = req.getParameter("title");
-		String codDirectorString = req.getParameter("codDirector");
-		Pelicula pelicula = new Pelicula();
-		int cod = Integer.parseInt(codString);
-		pelicula.setCod(cod);
-		int codDirector = Integer.parseInt(codDirectorString);
-		pelicula.setCodDirector(codDirector);
-		pelicula.setTitle(title);
+		Pelicula pelicula = PeliculaAssembler.assemblePeliculaFrom(req);
 		service.insert(pelicula);
 		doAction(req, resp);
 	}

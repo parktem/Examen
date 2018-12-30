@@ -31,7 +31,7 @@ List<Pelicula> listAllPeliculas = (List<Pelicula>)request.getAttribute("listAllP
 			<td>Cod</td>
 			<td>Title</td>
 			<td>codDirector</td>
-			<td>Editar</td>
+			<td>Eliminar</td>
 		</tr>
 	</thead>
 	<tbody>
@@ -40,7 +40,7 @@ List<Pelicula> listAllPeliculas = (List<Pelicula>)request.getAttribute("listAllP
 				<td><c:out value="${pelicula.cod}"/> </td>
 				<td><c:out value="${pelicula.title}"/> </td>
 				<td><c:out value="${pelicula.codDirector}"/> </td>
-				<td><a href="/pelicula?cod=${peli.cod}">EDIT</a> </td>
+				<td><a href="/pelicula?cod=${pelicula.cod}">Eliminar</a> </td>
 	    	</tr>
 		</c:forEach>
 	</tbody>

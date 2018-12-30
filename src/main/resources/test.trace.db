@@ -2802,3 +2802,15 @@ Column "IS_GENERATEDCOLUMN" not found [42122-197]
 	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetJobDataRead.run(ResultSetJobDataRead.java:91)
 	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:101)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+2018-12-30 20:39:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabla "PELICULA" no encontrada
+Table "PELICULA" not found; SQL statement:
+DELETE FROM PELICULA WHERE cod=? [42102-192]
+2018-12-30 20:39:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabla "PELICULA" no encontrada
+Table "PELICULA" not found; SQL statement:
+DELETE FROM PELICULA WHERE cod=? [42102-192]
+2018-12-30 20:39:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabla "PELICULA" no encontrada
+Table "PELICULA" not found; SQL statement:
+DELETE FROM PELICULA WHERE cod=? [42102-192]

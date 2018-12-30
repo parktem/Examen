@@ -45,10 +45,9 @@ public class Repository {
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = conn
-					.prepareStatement("INSERT INTO Film (cod, tittle, codOwner)" + "VALUES (?, ?, ?)");
-			preparedStatement.setInt(1, pelicula.getCod());
-			preparedStatement.setString(2, pelicula.getTitle());
-			preparedStatement.setInt(3, pelicula.getCodDirector());
+					.prepareStatement("INSERT INTO FILM (tittle, codOwner)" + "VALUES (?, ?)");
+			preparedStatement.setString(1, pelicula.getTitle());
+			preparedStatement.setInt(2, pelicula.getCodDirector());
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -96,13 +95,13 @@ public class Repository {
 
 	}
 	
-	public void delete(Pelicula actor) {
+	public void delete(Pelicula pelicula) {
 		Connection conn = manager.open(jdbcUrl);
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = conn
-					.prepareStatement("DELETE FROM PELICULA WHERE cod=?");
-			preparedStatement.setInt(1, actor.getCod());
+					.prepareStatement("DELETE FROM FILM WHERE cod=?");
+			preparedStatement.setInt(1, pelicula.getCod());
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
