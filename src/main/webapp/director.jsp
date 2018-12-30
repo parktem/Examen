@@ -7,8 +7,7 @@
 <title>Index page</title>
 </head>
 <body>
-	<form action="/pelicula" method="post">
-		<span>cod:</span> <input type="text" name="cod"> <br />
+	<form action="/director" method="post">
 		<span>name:</span> <input type="text" name="name"> <br />
 		<input type="submit">
 	</form>

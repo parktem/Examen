@@ -7,12 +7,18 @@ import javax.servlet.http.HttpServletRequest;
 import es.salesianos.model.Actor;
 import es.salesianos.model.Director;
 import es.salesianos.model.Pelicula;
+import es.salesianos.model.assembler.DirectorAssembler;
 import es.salesianos.repository.Repository;
 
 public class Service {
 
 
 	private Repository repository = new Repository();
+	
+	
+	public Director assembleDirectorFromRequest(HttpServletRequest req) {
+		return DirectorAssembler.assembleDirectorFrom(req);
+	}
 
 	public List<Actor> selectAllActor() {
 			return repository.selectAllActor();

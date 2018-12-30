@@ -45,7 +45,7 @@ public class Repository {
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = conn
-					.prepareStatement("INSERT INTO Pelicula (cod, title, codOwner)" + "VALUES (?, ?, ?)");
+					.prepareStatement("INSERT INTO Film (cod, tittle, codOwner)" + "VALUES (?, ?, ?)");
 			preparedStatement.setInt(1, pelicula.getCod());
 			preparedStatement.setString(2, pelicula.getTitle());
 			preparedStatement.setInt(3, pelicula.getCodDirector());
@@ -65,9 +65,8 @@ public class Repository {
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = conn
-					.prepareStatement("INSERT INTO DIRECTOR (cod, name)" + "VALUES (?, ?)");
-			preparedStatement.setInt(1, director.getCod());
-			preparedStatement.setString(2, director.getNombre());
+					.prepareStatement("INSERT INTO DIRECTOR (name)" + "VALUES (?)");
+			preparedStatement.setString(1, director.getNombre());
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

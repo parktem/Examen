@@ -9,10 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import es.salesianos.model.Actor;
+import es.salesianos.model.Director;
 import es.salesianos.service.Service;
 import es.salesianos.service.Service;
 
-public class Directorservlet extends HttpServlet {
+public class DirectorServlet extends HttpServlet {
 
 
 	private static final long serialVersionUID = 1L;
@@ -21,6 +22,8 @@ public class Directorservlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		Director director = service.assembleDirectorFromRequest(req);
+		service.insert(director);
 		doAction(req, resp);
 	}
 
