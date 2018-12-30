@@ -190,13 +190,13 @@ public class Repository {
 		List<Pelicula> list = new ArrayList<Pelicula>();
 		try {
 			preparedStatement = conn
-					.prepareStatement("SELECT * FROM PELICULA");
+					.prepareStatement("SELECT * FROM FILM");
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
 				Pelicula director = new Pelicula();
-				director.setCod(resultSet.getInt(0));
-				director.setTitle(resultSet.getString(1));
-				director.setCodDirector(resultSet.getInt(2));
+				director.setCod(resultSet.getInt(1));
+				director.setTitle(resultSet.getString(2));
+				director.setCodDirector(resultSet.getInt(3));
 				list.add(director);
 			}
 			
