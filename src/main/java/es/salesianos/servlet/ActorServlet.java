@@ -16,7 +16,6 @@ import es.salesianos.service.Service;
 
 public class ActorServlet extends HttpServlet {
 
-
 	private static final long serialVersionUID = 1L;
 
 	private Service service = new Service();
@@ -31,7 +30,7 @@ public class ActorServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String codString = req.getParameter("cod");
-		if(codString != null) {
+		if (codString != null) {
 			Actor actor = new Actor();
 			int cod = Integer.parseInt(codString);
 			actor.setCod(cod);
@@ -41,8 +40,16 @@ public class ActorServlet extends HttpServlet {
 	}
 
 	private void doAction(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		List<Actor> listAllActores = service.selectAllActor();
-		req.setAttribute("listAllActores", listAllActores);
+		String parameter = req.getParameter("beginDate");
+		if (parameter != null) {
+			int beginDate = Integer.parseInt(req.getParameter("beginDate"));
+			int endDate = Integer.parseInt(req.getParameter("endDate"));
+			List<Actor> listAllActores = service.filterAllActor(beginDate, endDate);
+			req.setAttribute("listAllActores", listAllActores);
+		} else {
+			List<Actor> listAllActores = service.selectAllActor();
+			req.setAttribute("listAllActores", listAllActores);
+		}
 		redirect(req, resp);
 	}
 
