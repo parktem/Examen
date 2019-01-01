@@ -162,9 +162,6 @@ public class Repository {
 					.prepareStatement("SELECT * FROM ACTOR WHERE yearOfBirthDate BETWEEN (?) AND (?)");
 			preparedStatement.setInt(1, beginDate);
 			preparedStatement.setInt(2, endDate);
-			System.out.println("llego");
-			System.out.println(beginDate);
-			System.out.println(endDate);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
 				Actor actor = new Actor();
@@ -182,6 +179,55 @@ public class Repository {
 			manager.close(conn);
 		}
 		return list;
+	}
+	
+	
+	public PeliculaActor filterAllPeliculaActor(String role) {
+		Connection conn = manager.open(jdbcUrl);
+		PreparedStatement preparedStatement = null;
+		PeliculaActor peliculaActor = null;
+		try {
+			preparedStatement = conn
+					.prepareStatement("SELECT * FROM FILMACTOR WHERE ROLE = (?)");
+			preparedStatement.setString(1, role);
+			ResultSet resultSet = preparedStatement.executeQuery();
+			while (resultSet.next()) {
+				PeliculaActor peliculaActorfromDataBase = new PeliculaActor();
+				peliculaActorfromDataBase.setCache(resultSet.getInt(1));
+				peliculaActorfromDataBase.setRole(resultSet.getString(2));
+				peliculaActorfromDataBase.setCodActor(resultSet.getInt(3));
+				peliculaActorfromDataBase.setCodPelicula(resultSet.getInt(4));
+				peliculaActor = peliculaActorfromDataBase;
+			}
+			preparedStatement = conn.prepareStatement(
+					"SELECT * FROM Actor where cod=" + peliculaActor.getCodActor());
+			resultSet = preparedStatement.executeQuery();
+			while (resultSet.next()) {
+				Actor actorfromDataBase = new Actor();
+				actorfromDataBase.setNombre(resultSet.getString(2));
+				actorfromDataBase.setYear(resultSet.getInt(3));
+				peliculaActor.setActor(actorfromDataBase);
+			}
+			
+			preparedStatement = conn.prepareStatement(
+					"SELECT * FROM FILM where cod=" + peliculaActor.getCodPelicula());
+			resultSet = preparedStatement.executeQuery();
+			while (resultSet.next()) {
+				Pelicula peliculafromDataBase = new Pelicula();
+				peliculafromDataBase.setCod(resultSet.getInt(1));
+				peliculafromDataBase.setTitle(resultSet.getString(2));
+				peliculafromDataBase.setCodDirector(resultSet.getInt(3));
+				peliculaActor.setPelicula(peliculafromDataBase);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		} finally {
+			manager.close(preparedStatement);
+			manager.close(conn);
+		}
+		return peliculaActor;
 	}
 	
 	

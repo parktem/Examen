@@ -14,7 +14,8 @@
 	<a href="/pelicula">Peliculas:</a><br/>
 	<a href="/director">Directores:</a><br/>
 	<a href="/actor">Actores:</a><br/>
-	<a href="peliculaactor">Asociar peliculas con actores:</a>
+	<a href="peliculaactor">Asociar peliculas con actores:</a><br/>
+	<a href="/buscador">Buscador de personaje</a><br/>
 </div>
 
 

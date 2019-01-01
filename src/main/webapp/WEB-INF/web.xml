@@ -35,6 +35,14 @@
 		</servlet-class>
 	</servlet>
 
+	<servlet>
+		<servlet-name>BuscadorPersonajeServlet</servlet-name>
+		<servlet-class>es.salesianos.servlet.BuscadorPersonajeServlet
+		</servlet-class>
+	</servlet>
+
+
+
 
 	<servlet-mapping>
 		<servlet-name>ActorServlet</servlet-name>
@@ -64,6 +72,11 @@
 	<servlet-mapping>
 		<servlet-name>FillPeliculaActorServlet</servlet-name>
 		<url-pattern>/fillPeliculaActor</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>BuscadorPersonajeServlet</servlet-name>
+		<url-pattern>/buscador</url-pattern>
 	</servlet-mapping>
 
 

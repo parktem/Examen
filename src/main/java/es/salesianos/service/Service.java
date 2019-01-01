@@ -22,6 +22,10 @@ public class Service {
 	public List<Actor> filterAllActor(int beginDate, int endDate) {
 		return repository.filterAllActor(beginDate, endDate);
 	}
+	
+	public PeliculaActor filterAllPeliculaActor(String role) {
+		return repository.filterAllPeliculaActor(role);
+	}
 
 	public List<Actor> selectAllActor() {
 		return repository.selectAllActor();

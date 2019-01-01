@@ -7,6 +7,8 @@ public class PeliculaActor {
 	private String role;
 	private int codPelicula;
 	private int codActor;
+	private Actor actor;
+	private Pelicula pelicula;
 	
 	public int getCache() {
 		return cache;
@@ -31,6 +33,18 @@ public class PeliculaActor {
 	}
 	public void setCodActor(int codActor) {
 		this.codActor = codActor;
+	}
+	public Actor getActor() {
+		return actor;
+	}
+	public void setActor(Actor actor) {
+		this.actor = actor;
+	}
+	public Pelicula getPelicula() {
+		return pelicula;
+	}
+	public void setPelicula(Pelicula pelicula) {
+		this.pelicula = pelicula;
 	}
 	
 	
