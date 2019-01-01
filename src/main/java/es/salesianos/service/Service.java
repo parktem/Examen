@@ -26,6 +26,10 @@ public class Service {
 	public PeliculaActor filterAllPeliculaActor(String role) {
 		return repository.filterAllPeliculaActor(role);
 	}
+	
+	public Actor filterAllDirector(String name) {
+		return repository.filterAllDirector(name);
+	}
 
 	public List<Actor> selectAllActor() {
 		return repository.selectAllActor();

@@ -16,6 +16,7 @@
 	<a href="/actor">Actores:</a><br/>
 	<a href="peliculaactor">Asociar peliculas con actores:</a><br/>
 	<a href="/buscador">Buscador de personaje</a><br/>
+	<a href="/buscadorActor">Buscador de Director por Actor</a><br/>
 </div>
 
 
