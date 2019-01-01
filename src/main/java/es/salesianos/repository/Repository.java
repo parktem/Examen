@@ -12,6 +12,7 @@ import es.salesianos.connection.H2Connection;
 import es.salesianos.model.Actor;
 import es.salesianos.model.Director;
 import es.salesianos.model.Pelicula;
+import es.salesianos.model.PeliculaActor;
 
 public class Repository {
 
@@ -19,6 +20,28 @@ public class Repository {
 	AbstractConnection manager = new H2Connection();
 
 
+	public void insert(PeliculaActor peliculaActor) {
+		Connection conn = manager.open(jdbcUrl);
+		PreparedStatement preparedStatement = null;
+		try {
+			preparedStatement = conn
+					.prepareStatement("INSERT INTO FILMACTOR (cache, role, codActor, codFilm)" + "VALUES (?, ?, ?, ?)");
+			preparedStatement.setInt(1, peliculaActor.getCache());
+			preparedStatement.setString(2, peliculaActor.getRole());
+			preparedStatement.setInt(3, peliculaActor.getCodActor());
+			preparedStatement.setInt(4, peliculaActor.getCodPelicula());
+			preparedStatement.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		} finally {
+			manager.close(preparedStatement);
+			manager.close(conn);
+		}
+
+	}
+	
+	
 	public void insert(Actor actor) {
 		Connection conn = manager.open(jdbcUrl);
 		PreparedStatement preparedStatement = null;
@@ -44,9 +67,8 @@ public class Repository {
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = conn
-					.prepareStatement("INSERT INTO FILM (tittle, codOwner)" + "VALUES (?, ?)");
+					.prepareStatement("INSERT INTO FILM (tittle)" + "VALUES (?)");
 			preparedStatement.setString(1, pelicula.getTitle());
-			preparedStatement.setInt(2, pelicula.getCodDirector());
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

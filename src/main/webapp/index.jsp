@@ -11,9 +11,10 @@
 <body>
 
 <div>
-	<a href="/pelicula">Peliculas:</a>
-	<a href="/director">Directores:</a>
-	<a href="/actor">Actores:</a>
+	<a href="/pelicula">Peliculas:</a><br/>
+	<a href="/director">Directores:</a><br/>
+	<a href="/actor">Actores:</a><br/>
+	<a href="peliculaactor">Asociar peliculas con actores:</a>
 </div>
 
 

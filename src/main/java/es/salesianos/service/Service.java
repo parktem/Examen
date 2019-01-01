@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import es.salesianos.model.Actor;
 import es.salesianos.model.Director;
 import es.salesianos.model.Pelicula;
+import es.salesianos.model.PeliculaActor;
 import es.salesianos.model.assembler.DirectorAssembler;
 import es.salesianos.repository.Repository;
 
@@ -46,6 +47,10 @@ public class Service {
 
 	public void insert(Director director) {
 		repository.insert(director);
+	}
+	
+	public void insert(PeliculaActor peliculaActor) {
+		repository.insert(peliculaActor);;
 	}
 
 	public void delete(Actor actor) {
