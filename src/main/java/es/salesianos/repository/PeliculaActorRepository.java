@@ -62,7 +62,7 @@ public class PeliculaActorRepository {
 			resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
 				Actor actorfromDataBase = new Actor();
-				actorfromDataBase.setNombre(resultSet.getString(2));
+				actorfromDataBase.setName(resultSet.getString(2));
 				actorfromDataBase.setYear(resultSet.getInt(3));
 				peliculaActor.setActor(actorfromDataBase);
 			}

@@ -14,7 +14,7 @@ public class ActorAssembler {
 			actor.setYear(Integer.parseInt(year));
 		}
 		String nombre = req.getParameter("nombre");
-		actor.setNombre(nombre);
+		actor.setName(nombre);
 		return actor;
 	}
 	

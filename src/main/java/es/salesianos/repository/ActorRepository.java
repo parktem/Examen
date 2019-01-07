@@ -28,7 +28,7 @@ public class ActorRepository {
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = conn.prepareStatement("INSERT INTO ACTOR (name,yearOfBirthDate)" + "VALUES (?, ?)");
-			preparedStatement.setString(1, actor.getNombre());
+			preparedStatement.setString(1, actor.getName());
 			preparedStatement.setInt(2, actor.getYear());
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
@@ -72,7 +72,7 @@ public class ActorRepository {
 			while (resultSet.next()) {
 				Actor actor = new Actor();
 				actor.setCod(resultSet.getInt(1));
-				actor.setNombre(resultSet.getNString(2));
+				actor.setName(resultSet.getNString(2));
 				actor.setYear(resultSet.getInt(3));
 				list.add(actor);
 			}
@@ -99,7 +99,7 @@ public class ActorRepository {
 			while (resultSet.next()) {
 				Actor actorfromDataBase = new Actor();
 				actorfromDataBase.setCod(resultSet.getInt(1));
-				actorfromDataBase.setNombre(resultSet.getString(2));
+				actorfromDataBase.setName(resultSet.getString(2));
 				actorfromDataBase.setYear(resultSet.getInt(3));
 				actor = actorfromDataBase;
 			}
@@ -132,7 +132,7 @@ public class ActorRepository {
 				resultSet = preparedStatement.executeQuery();
 				while (resultSet.next()) {
 					Director directorfromDataBase = new Director();
-					directorfromDataBase.setNombre(resultSet.getString(2));
+					directorfromDataBase.setName(resultSet.getString(2));
 					actor.getPeliculaActor().get(index).getPelicula().setDirector(directorfromDataBase);
 				}
 				index++;
@@ -160,7 +160,7 @@ public class ActorRepository {
 			while (resultSet.next()) {
 				Actor actor = new Actor();
 				actor.setCod(resultSet.getInt(1));
-				actor.setNombre(resultSet.getNString(2));
+				actor.setName(resultSet.getNString(2));
 				actor.setYear(resultSet.getInt(3));
 				list.add(actor);
 			}

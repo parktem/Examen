@@ -26,7 +26,7 @@ public class DirectorRepository {
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = conn.prepareStatement("INSERT INTO DIRECTOR (name)" + "VALUES (?)");
-			preparedStatement.setString(1, director.getNombre());
+			preparedStatement.setString(1, director.getName());
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
 			log.error(e);
@@ -67,7 +67,7 @@ public class DirectorRepository {
 			while (resultSet.next()) {
 				Actor director = new Actor();
 				director.setCod(resultSet.getInt(1));
-				director.setNombre(resultSet.getString(2));
+				director.setName(resultSet.getString(2));
 				list.add(director);
 			}
 

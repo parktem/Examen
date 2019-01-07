@@ -13,7 +13,7 @@ public class DirectorAssembler {
 			director.setCod(Integer.parseInt(codDirector));
 		}
 		String name = req.getParameter("name");
-		director.setNombre(name);
+		director.setName(name);
 		return director;
 	}
 	
