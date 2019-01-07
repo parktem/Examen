@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import es.salesianos.model.Actor;
 import es.salesianos.model.assembler.ActorAssembler;
+import es.salesianos.service.ActorService;
 import es.salesianos.service.Service;
 import es.salesianos.service.Service;
 
@@ -18,7 +19,7 @@ public class ActorServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	private Service service = new Service();
+	private ActorService service = new ActorService();
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

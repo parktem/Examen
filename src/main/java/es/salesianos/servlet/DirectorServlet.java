@@ -11,13 +11,14 @@ import javax.servlet.http.HttpServletResponse;
 
 import es.salesianos.model.Director;
 import es.salesianos.model.Pelicula;
+import es.salesianos.service.DirectorService;
 import es.salesianos.service.Service;
 
 public class DirectorServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	private Service service = new Service();
+	private DirectorService service = new DirectorService();
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

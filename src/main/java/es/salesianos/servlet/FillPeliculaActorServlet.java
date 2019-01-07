@@ -14,6 +14,7 @@ import es.salesianos.model.Pelicula;
 import es.salesianos.model.PeliculaActor;
 import es.salesianos.model.assembler.PeliculaActorAssembler;
 import es.salesianos.model.assembler.PeliculaAssembler;
+import es.salesianos.service.PeliculaActorService;
 import es.salesianos.service.Service;
 import es.salesianos.service.Service;
 
@@ -22,7 +23,7 @@ public class FillPeliculaActorServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	private Service service = new Service();
+	private PeliculaActorService service = new PeliculaActorService();
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
