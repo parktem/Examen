@@ -9,12 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import es.salesianos.model.Actor;
 import es.salesianos.model.Pelicula;
 import es.salesianos.model.assembler.PeliculaAssembler;
 import es.salesianos.service.PeliculaService;
-import es.salesianos.service.Service;
-import es.salesianos.service.Service;
 
 public class PeliculaServlet extends HttpServlet {
 
@@ -29,7 +26,7 @@ public class PeliculaServlet extends HttpServlet {
 		service.insert(pelicula);
 		doAction(req, resp);
 	}
-
+ 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String codString = req.getParameter("cod");

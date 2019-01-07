@@ -10,9 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import es.salesianos.model.Director;
-import es.salesianos.model.Pelicula;
 import es.salesianos.service.DirectorService;
-import es.salesianos.service.Service;
 
 public class DirectorServlet extends HttpServlet {
 
@@ -26,7 +24,7 @@ public class DirectorServlet extends HttpServlet {
 		service.insert(director);
 		doAction(req, resp);
 	}
-
+ 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String codString = req.getParameter("cod");

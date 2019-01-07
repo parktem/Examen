@@ -1,7 +1,6 @@
 package es.salesianos.servlet;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,14 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import es.salesianos.model.Actor;
-import es.salesianos.model.Pelicula;
 import es.salesianos.model.PeliculaActor;
-import es.salesianos.model.assembler.PeliculaActorAssembler;
-import es.salesianos.model.assembler.PeliculaAssembler;
 import es.salesianos.service.PeliculaActorService;
-import es.salesianos.service.Service;
-import es.salesianos.service.Service;
 
 public class BuscadorPersonajeServlet extends HttpServlet {
 

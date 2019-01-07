@@ -1,7 +1,6 @@
 package es.salesianos.servlet;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,21 +9,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import es.salesianos.model.Actor;
-import es.salesianos.model.Director;
-import es.salesianos.model.Pelicula;
-import es.salesianos.model.PeliculaActor;
-import es.salesianos.model.assembler.PeliculaActorAssembler;
-import es.salesianos.model.assembler.PeliculaAssembler;
 import es.salesianos.service.ActorService;
-import es.salesianos.service.Service;
-import es.salesianos.service.Service;
 
 public class BuscadorActorServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
 	private ActorService service = new ActorService();
-
+ 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doAction(req, resp);
