@@ -7,6 +7,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import es.salesianos.connection.AbstractConnection;
 import es.salesianos.connection.H2Connection;
 import es.salesianos.model.Actor;
@@ -18,6 +21,7 @@ public class ActorRepository {
 
 	private static final String jdbcUrl = "jdbc:h2:file:./src/main/resources/test";
 	AbstractConnection manager = new H2Connection();
+	private static final Logger log = LogManager.getLogger(ActorRepository.class);
 	
 	public void insert(Actor actor) {
 		Connection conn = manager.open(jdbcUrl);
@@ -28,6 +32,7 @@ public class ActorRepository {
 			preparedStatement.setInt(2, actor.getYear());
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
+			log.error(e);
 			e.printStackTrace();
 			throw new RuntimeException(e);
 		} finally {
@@ -45,6 +50,7 @@ public class ActorRepository {
 			preparedStatement.setInt(1, actor.getCod());
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
+			log.error(e);
 			e.printStackTrace();
 			throw new RuntimeException(e);
 		} finally {
@@ -72,6 +78,7 @@ public class ActorRepository {
 			}
 
 		} catch (SQLException e) {
+			log.error(e);
 			e.printStackTrace();
 			throw new RuntimeException(e);
 		} finally {
@@ -133,6 +140,7 @@ public class ActorRepository {
 			
 
 		} catch (SQLException e) {
+			log.error(e);
 			e.printStackTrace();
 			throw new RuntimeException(e);
 		} finally {
@@ -158,6 +166,7 @@ public class ActorRepository {
 			}
 
 		} catch (SQLException e) {
+			log.error(e);
 			e.printStackTrace();
 			throw new RuntimeException(e);
 		} finally {
