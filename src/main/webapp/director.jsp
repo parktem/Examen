@@ -28,7 +28,7 @@ List<Pelicula> listAllDirectores = (List<Pelicula>)request.getAttribute("listAll
 			<td>Cod</td>
 			<td>Title</td>
 			<td>codDirector</td>
-			<td>Eliminar</td>
+			<td>delete</td>
 		</tr>
 	</thead>
 	<tbody>

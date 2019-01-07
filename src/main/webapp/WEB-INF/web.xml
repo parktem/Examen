@@ -36,14 +36,14 @@
 	</servlet>
 
 	<servlet>
-		<servlet-name>BuscadorPersonajeServlet</servlet-name>
-		<servlet-class>es.salesianos.servlet.BuscadorPersonajeServlet
+		<servlet-name>searchRoleServlet</servlet-name>
+		<servlet-class>es.salesianos.servlet.SearchRoleServlet
 		</servlet-class>
 	</servlet>
 
 	<servlet>
-		<servlet-name>buscadorActorServlet</servlet-name>
-		<servlet-class>es.salesianos.servlet.BuscadorActorServlet
+		<servlet-name>searchActorServlet</servlet-name>
+		<servlet-class>es.salesianos.servlet.SearchActorServlet
 		</servlet-class>
 	</servlet>
 	
@@ -80,13 +80,13 @@
 	</servlet-mapping>
 
 	<servlet-mapping>
-		<servlet-name>BuscadorPersonajeServlet</servlet-name>
-		<url-pattern>/buscador</url-pattern>
+		<servlet-name>searchRoleServlet</servlet-name>
+		<url-pattern>/searchRole</url-pattern>
 	</servlet-mapping>
 
 	<servlet-mapping>
-		<servlet-name>buscadorActorServlet</servlet-name>
-		<url-pattern>/buscadorActor</url-pattern>
+		<servlet-name>searchActorServlet</servlet-name>
+		<url-pattern>/searchActor</url-pattern>
 	</servlet-mapping>
 
 

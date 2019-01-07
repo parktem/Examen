@@ -17,7 +17,7 @@
 		Actor listFilterActor = (Actor)request.getAttribute("listFilterActor");
 	%>
 
-	<form action="/buscadorActor" method="post">
+	<form action="/searchActor" method="post">
 		<span>Buscar por Actor: <input type="text" name="name"></span>
 		<br /> <input type="submit">
 	</form>

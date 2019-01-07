@@ -17,7 +17,7 @@
 		PeliculaActor selectPeliculaActor = (PeliculaActor)request.getAttribute("selectPeliculaActor");
 	%>
 	
-	<form action="/buscador" method="post">
+	<form action="/searchRole" method="post">
 	<span>Buscar por personaje: <input type="text" name="role"></span>
 	<br />
 	<input type="submit">

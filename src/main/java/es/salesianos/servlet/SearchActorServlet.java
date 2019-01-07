@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import es.salesianos.model.Actor;
 import es.salesianos.service.ActorService;
 
-public class BuscadorActorServlet extends HttpServlet {
+public class SearchActorServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 

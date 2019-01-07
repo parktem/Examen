@@ -23,7 +23,7 @@ List<Pelicula> listAllPeliculas = (List<Pelicula>)request.getAttribute("listAllP
 		<tr>
 			<td>Cod</td>
 			<td>Title</td>
-			<td>Asociar Actor</td>
+			<td>Link Actor</td>
 		</tr>
 	</thead>
 	<tbody>
@@ -31,7 +31,7 @@ List<Pelicula> listAllPeliculas = (List<Pelicula>)request.getAttribute("listAllP
 			<tr>
 				<td><c:out value="${pelicula.cod}"/> </td>
 				<td><c:out value="${pelicula.title}"/> </td>
-				<td><a href="/recoveryFilm?cod=${pelicula.cod}">Asociar</a></td>
+				<td><a href="/recoveryFilm?cod=${pelicula.cod}">Link</a></td>
 	    	</tr>
 		</c:forEach>
 	</tbody>
