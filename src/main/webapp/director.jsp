@@ -14,7 +14,6 @@ List<Pelicula> listAllDirectores = (List<Pelicula>)request.getAttribute("listAll
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Index page</title>
 </head>
 <body>
 	<form action="/director" method="post">
