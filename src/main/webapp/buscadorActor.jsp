@@ -35,10 +35,10 @@
 					<c:forEach var="peliculaActor" items="${listFilterActor.peliculaActor}">
 					<tr>
 					<td>
-						<c:out value="${peliculaActor.pelicula.director.nombre}" />
+						<c:out value="${peliculaActor.film.director.name}" />
 					</td>
 					<td>
-						<c:out value="${peliculaActor.pelicula.title}" />
+						<c:out value="${peliculaActor.film.title}" />
 					</td>
 					</tr>
 					</c:forEach>

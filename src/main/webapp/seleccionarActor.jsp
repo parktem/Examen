@@ -30,9 +30,9 @@
 			<c:forEach var="actor" items="${listAllActores}">
 				<tr>
 					<td><c:out value="${actor.cod}" /></td>
-					<td><c:out value="${actor.nombre}" /></td>
+					<td><c:out value="${actor.name}" /></td>
 					<td><c:out value="${actor.year}" /></td>
-					<td><a href="/fillPeliculaActor?codActor=${actor.cod}&codPelicula=${codPelicula}">Seleccionar Actor</a></td>
+					<td><a href="/fillPeliculaActor?codActor=${actor.cod}&codPelicula=${codPelicula}">Select Actor</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

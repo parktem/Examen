@@ -13,7 +13,7 @@ import es.salesianos.model.Pelicula;
 import es.salesianos.model.assembler.PeliculaAssembler;
 import es.salesianos.service.PeliculaService;
 
-public class PeliculaServlet extends HttpServlet {
+public class FilmServlet extends HttpServlet {
 
 
 	private static final long serialVersionUID = 1L;

@@ -74,7 +74,7 @@ public class PeliculaActorRepository {
 				peliculafromDataBase.setCod(resultSet.getInt(1));
 				peliculafromDataBase.setTitle(resultSet.getString(2));
 				peliculafromDataBase.setCodDirector(resultSet.getInt(3));
-				peliculaActor.setPelicula(peliculafromDataBase);
+				peliculaActor.setFilm(peliculafromDataBase);
 			}
 
 		} catch (SQLException e) {

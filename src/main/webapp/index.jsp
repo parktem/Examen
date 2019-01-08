@@ -8,9 +8,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
-
 <div>
-	<a href="/pelicula">Peliculas:</a><br/>
+	<a href="/film">Peliculas:</a><br/>
 	<a href="/director">Directores:</a><br/>
 	<a href="/actor">Actores:</a><br/>
 	<a href="peliculaactor">Asociar peliculas con actores:</a><br/>
@@ -18,7 +17,5 @@
 	<a href="/searchActor">Buscador de Director por Actor</a><br/>
 </div>
 
-
-</table>
 </body>
 </html>

@@ -34,8 +34,8 @@
 		</thead>
 		<tbody>
 				<tr>
-					<td><c:out value="${selectPeliculaActor.pelicula.title}" /></td>
-					<td><c:out value="${selectPeliculaActor.actor.nombre}" /></td>
+					<td><c:out value="${selectPeliculaActor.film.title}" /></td>
+					<td><c:out value="${selectPeliculaActor.actor.name}" /></td>
 					<td><c:out value="${selectPeliculaActor.role}" /></td>
 				</tr>
 		</tbody>

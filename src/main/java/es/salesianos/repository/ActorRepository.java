@@ -121,19 +121,19 @@ public class ActorRepository {
 					Pelicula peliculafromDataBase = new Pelicula();
 					peliculafromDataBase.setTitle(resultSet.getString(2));
 					peliculafromDataBase.setCodDirector(resultSet.getInt(3));
-					actor.getPeliculaActor().get(index).setPelicula(peliculafromDataBase);
+					actor.getPeliculaActor().get(index).setFilm(peliculafromDataBase);
 				}
 				index++;
 			}
 			index = 0;
 			for (PeliculaActor peliculaActor : actor.getPeliculaActor()) {
 				preparedStatement = conn
-						.prepareStatement("SELECT * FROM DIRECTOR where COD=" + peliculaActor.getPelicula().getCodDirector());
+						.prepareStatement("SELECT * FROM DIRECTOR where COD=" + peliculaActor.getFilm().getCodDirector());
 				resultSet = preparedStatement.executeQuery();
 				while (resultSet.next()) {
 					Director directorfromDataBase = new Director();
 					directorfromDataBase.setName(resultSet.getString(2));
-					actor.getPeliculaActor().get(index).getPelicula().setDirector(directorfromDataBase);
+					actor.getPeliculaActor().get(index).getFilm().setDirector(directorfromDataBase);
 				}
 				index++;
 			}

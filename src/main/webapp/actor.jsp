@@ -37,16 +37,16 @@
 				<td>Cod</td>
 				<td>Title</td>
 				<td>codDirector</td>
-				<td>Eliminar</td>
+				<td>Delete</td>
 			</tr>
 		</thead>
 		<tbody>
 			<c:forEach var="actor" items="${listAllActores}">
 				<tr>
 					<td><c:out value="${actor.cod}" /></td>
-					<td><c:out value="${actor.nombre}" /></td>
+					<td><c:out value="${actor.name}" /></td>
 					<td><c:out value="${actor.year}" /></td>
-					<td><a href="/actor?cod=${actor.cod}">Eliminar</a></td>
+					<td><a href="/actor?cod=${actor.cod}">Delete</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

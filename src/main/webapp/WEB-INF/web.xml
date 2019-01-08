@@ -9,8 +9,8 @@
 		<servlet-class>es.salesianos.servlet.ActorServlet</servlet-class>
 	</servlet>
 	<servlet>
-		<servlet-name>PeliculaServlet</servlet-name>
-		<servlet-class>es.salesianos.servlet.PeliculaServlet</servlet-class>
+		<servlet-name>FilmServlet</servlet-name>
+		<servlet-class>es.salesianos.servlet.FilmServlet</servlet-class>
 	</servlet>
 	<servlet>
 		<servlet-name>DirectorServlet</servlet-name>
@@ -55,8 +55,8 @@
 	</servlet-mapping>
 
 	<servlet-mapping>
-		<servlet-name>PeliculaServlet</servlet-name>
-		<url-pattern>/pelicula</url-pattern>
+		<servlet-name>FilmServlet</servlet-name>
+		<url-pattern>/film</url-pattern>
 	</servlet-mapping>
 
 	<servlet-mapping>
