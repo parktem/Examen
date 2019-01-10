@@ -20,7 +20,7 @@ public class DirectorRepository {
 	private static final String jdbcUrl = "jdbc:h2:file:./src/main/resources/test";
 	AbstractConnection manager = new H2Connection();
 	private static final Logger log = LogManager.getLogger(ActorRepository.class);
-	
+
 	public void insert(Director director) {
 		Connection conn = manager.open(jdbcUrl);
 		PreparedStatement preparedStatement = null;
@@ -38,7 +38,7 @@ public class DirectorRepository {
 		}
 
 	}
-	
+
 	public void delete(Director director) {
 		Connection conn = manager.open(jdbcUrl);
 		PreparedStatement preparedStatement = null;
@@ -56,7 +56,7 @@ public class DirectorRepository {
 		}
 
 	}
-	
+
 	public List<Director> selectAllDirector() {
 		Connection conn = manager.open(jdbcUrl);
 		PreparedStatement preparedStatement = null;
@@ -81,5 +81,5 @@ public class DirectorRepository {
 		}
 		return list;
 	}
-	
+
 }

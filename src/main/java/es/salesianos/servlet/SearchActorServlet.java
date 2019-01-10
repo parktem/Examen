@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import es.salesianos.model.Actor;
+import es.salesianos.model.Director;
 import es.salesianos.service.ActorService;
 
 public class SearchActorServlet extends HttpServlet {
@@ -30,7 +31,7 @@ public class SearchActorServlet extends HttpServlet {
 	private void doAction(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		String name = req.getParameter("name");
 		if (name != null) {
-			Actor listFilterActor = service.filterAllDirector(name);
+			Director listFilterActor = service.filterAllDirector(name);
 			req.setAttribute("listFilterActor", listFilterActor);
 		}
 		redirect(req, resp);

@@ -11,6 +11,7 @@ import org.apache.logging.log4j.Logger;
 import es.salesianos.connection.AbstractConnection;
 import es.salesianos.connection.H2Connection;
 import es.salesianos.model.Actor;
+import es.salesianos.model.DtoActorFilm;
 import es.salesianos.model.Pelicula;
 import es.salesianos.model.PeliculaActor;
 
@@ -42,39 +43,24 @@ public class PeliculaActorRepository {
 
 	}
 	
-	public PeliculaActor filterAllPeliculaActor(String role) {
+	public DtoActorFilm filterAllPeliculaActor(String role) {
 		Connection conn = manager.open(jdbcUrl);
 		PreparedStatement preparedStatement = null;
-		PeliculaActor peliculaActor = null;
+		DtoActorFilm dto = null;
 		try {
-			preparedStatement = conn.prepareStatement("SELECT * FROM FILMACTOR WHERE ROLE = (?)");
+			preparedStatement = conn.prepareStatement("SELECT TITTLE, NAME, YEAROFBIRTHDATE" + 
+					" FROM ((FILMACTOR" + 
+					" INNER JOIN FILM ON FILM.COD = FILMACTOR.CODFILM)" + 
+					" INNER JOIN ACTOR ON ACTOR.COD = FILMACTOR.CODACTOR)" + 
+					" WHERE FILMACTOR.ROLE = (?)");
 			preparedStatement.setString(1, role);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
-				PeliculaActor peliculaActorfromDataBase = new PeliculaActor();
-				peliculaActorfromDataBase.setCache(resultSet.getInt(1));
-				peliculaActorfromDataBase.setRole(resultSet.getString(2));
-				peliculaActorfromDataBase.setCodActor(resultSet.getInt(3));
-				peliculaActorfromDataBase.setCodPelicula(resultSet.getInt(4));
-				peliculaActor = peliculaActorfromDataBase;
-			}
-			preparedStatement = conn.prepareStatement("SELECT * FROM Actor where cod=" + peliculaActor.getCodActor());
-			resultSet = preparedStatement.executeQuery();
-			while (resultSet.next()) {
-				Actor actorfromDataBase = new Actor();
-				actorfromDataBase.setName(resultSet.getString(2));
-				actorfromDataBase.setYear(resultSet.getInt(3));
-				peliculaActor.setActor(actorfromDataBase);
-			}
-
-			preparedStatement = conn.prepareStatement("SELECT * FROM FILM where cod=" + peliculaActor.getCodPelicula());
-			resultSet = preparedStatement.executeQuery();
-			while (resultSet.next()) {
-				Pelicula peliculafromDataBase = new Pelicula();
-				peliculafromDataBase.setCod(resultSet.getInt(1));
-				peliculafromDataBase.setTitle(resultSet.getString(2));
-				peliculafromDataBase.setCodDirector(resultSet.getInt(3));
-				peliculaActor.setFilm(peliculafromDataBase);
+				DtoActorFilm dtofromDataBase = new DtoActorFilm();
+				dtofromDataBase.setTitle(resultSet.getString(1));
+				dtofromDataBase.setName(resultSet.getString(2));
+				dtofromDataBase.setYear(resultSet.getInt(3));
+				dto = dtofromDataBase;
 			}
 
 		} catch (SQLException e) {
@@ -85,7 +71,7 @@ public class PeliculaActorRepository {
 			manager.close(preparedStatement);
 			manager.close(conn);
 		}
-		return peliculaActor;
+		return dto;
 	}
 	
 	

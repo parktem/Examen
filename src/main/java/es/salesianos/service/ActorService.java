@@ -3,6 +3,7 @@ package es.salesianos.service;
 import java.util.List;
 
 import es.salesianos.model.Actor;
+import es.salesianos.model.Director;
 import es.salesianos.repository.ActorRepository;
 
 public class ActorService {
@@ -28,7 +29,7 @@ public class ActorService {
 
 	}
 	
-	public Actor filterAllDirector(String name) {
+	public Director filterAllDirector(String name) {
 		return repository.filterAllDirector(name);
 	}
 	
