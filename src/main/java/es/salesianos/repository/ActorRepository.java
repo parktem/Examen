@@ -14,8 +14,6 @@ import es.salesianos.connection.AbstractConnection;
 import es.salesianos.connection.H2Connection;
 import es.salesianos.model.Actor;
 import es.salesianos.model.Director;
-import es.salesianos.model.Pelicula;
-import es.salesianos.model.PeliculaActor;
 
 public class ActorRepository {
 
@@ -33,13 +31,11 @@ public class ActorRepository {
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
 			log.error(e);
-			e.printStackTrace();
 			throw new RuntimeException(e);
 		} finally {
 			manager.close(preparedStatement);
 			manager.close(conn);
 		}
-
 	}
 	
 	public void delete(Actor actor) {
@@ -51,13 +47,11 @@ public class ActorRepository {
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
 			log.error(e);
-			e.printStackTrace();
 			throw new RuntimeException(e);
 		} finally {
 			manager.close(preparedStatement);
 			manager.close(conn);
 		}
-
 	}
 	
 	public List<Actor> filterAllActor(int beginDate, int endDate) {
@@ -76,10 +70,8 @@ public class ActorRepository {
 				actor.setYear(resultSet.getInt(3));
 				list.add(actor);
 			}
-
 		} catch (SQLException e) {
 			log.error(e);
-			e.printStackTrace();
 			throw new RuntimeException(e);
 		} finally {
 			manager.close(preparedStatement);
@@ -108,7 +100,6 @@ public class ActorRepository {
 			}			
 		} catch (SQLException e) {
 			log.error(e);
-			e.printStackTrace();
 			throw new RuntimeException(e);
 		} finally {
 			manager.close(preparedStatement);
@@ -134,7 +125,6 @@ public class ActorRepository {
 
 		} catch (SQLException e) {
 			log.error(e);
-			e.printStackTrace();
 			throw new RuntimeException(e);
 		} finally {
 			manager.close(preparedStatement);

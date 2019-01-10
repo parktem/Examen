@@ -25,7 +25,7 @@ public class ActorServlet extends HttpServlet {
 		service.insert(actor);
 		doAction(req, resp);
 	}
- 
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String codString = req.getParameter("cod");
@@ -41,14 +41,11 @@ public class ActorServlet extends HttpServlet {
 	private void doAction(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		String parameter = req.getParameter("beginDate");
 		if (parameter != null) {
-			int beginDate = Integer.parseInt(req.getParameter("beginDate"));
-			int endDate = Integer.parseInt(req.getParameter("endDate"));
-			List<Actor> listAllActores = service.filterAllActor(beginDate, endDate);
-			req.setAttribute("listAllActores", listAllActores);
-		} else {
-			List<Actor> listAllActores = service.selectAllActor();
+			List<Actor> listAllActores = service.filterAllActor(req);
 			req.setAttribute("listAllActores", listAllActores);
 		}
+		List<Actor> listAllActores = service.selectAllActor();
+		req.setAttribute("listAllActores", listAllActores);
 		redirect(req, resp);
 	}
 

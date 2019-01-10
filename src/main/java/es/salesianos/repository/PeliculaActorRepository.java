@@ -10,9 +10,7 @@ import org.apache.logging.log4j.Logger;
 
 import es.salesianos.connection.AbstractConnection;
 import es.salesianos.connection.H2Connection;
-import es.salesianos.model.Actor;
 import es.salesianos.model.DtoActorFilm;
-import es.salesianos.model.Pelicula;
 import es.salesianos.model.PeliculaActor;
 
 public class PeliculaActorRepository {
@@ -34,13 +32,11 @@ public class PeliculaActorRepository {
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
 			log.error(e);
-			e.printStackTrace();
 			throw new RuntimeException(e);
 		} finally {
 			manager.close(preparedStatement);
 			manager.close(conn);
 		}
-
 	}
 	
 	public DtoActorFilm filterAllPeliculaActor(String role) {
@@ -62,10 +58,8 @@ public class PeliculaActorRepository {
 				dtofromDataBase.setYear(resultSet.getInt(3));
 				dto = dtofromDataBase;
 			}
-
 		} catch (SQLException e) {
 			log.error(e);
-			e.printStackTrace();
 			throw new RuntimeException(e);
 		} finally {
 			manager.close(preparedStatement);

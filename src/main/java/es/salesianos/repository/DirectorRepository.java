@@ -30,7 +30,6 @@ public class DirectorRepository {
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
 			log.error(e);
-			e.printStackTrace();
 			throw new RuntimeException(e);
 		} finally {
 			manager.close(preparedStatement);
@@ -48,7 +47,6 @@ public class DirectorRepository {
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
 			log.error(e);
-			e.printStackTrace();
 			throw new RuntimeException(e);
 		} finally {
 			manager.close(preparedStatement);
@@ -70,10 +68,8 @@ public class DirectorRepository {
 				director.setName(resultSet.getString(2));
 				list.add(director);
 			}
-
 		} catch (SQLException e) {
 			log.error(e);
-			e.printStackTrace();
 			throw new RuntimeException(e);
 		} finally {
 			manager.close(preparedStatement);

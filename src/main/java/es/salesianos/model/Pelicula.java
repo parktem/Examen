@@ -1,14 +1,11 @@
 package es.salesianos.model;
 
-import java.util.List;
-
 public class Pelicula extends BaseEntity{
 
 	private String title;
 	private Integer codDirector;
 	private Director director;
 	
-	private List<PeliculaActor> peliculaActor;
 	
 	public Integer getCodDirector() {
 		return codDirector;
@@ -27,12 +24,6 @@ public class Pelicula extends BaseEntity{
 	}
 	public void setDirector(Director director) {
 		this.director = director;
-	}
-	public List<PeliculaActor> getPeliculaActor() {
-		return peliculaActor;
-	}
-	public void setPeliculaActor(List<PeliculaActor> peliculaActor) {
-		this.peliculaActor = peliculaActor;
 	}
 	
 }
