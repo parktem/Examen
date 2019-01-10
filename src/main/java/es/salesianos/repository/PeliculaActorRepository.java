@@ -11,7 +11,7 @@ import org.apache.logging.log4j.Logger;
 import es.salesianos.connection.AbstractConnection;
 import es.salesianos.connection.H2Connection;
 import es.salesianos.model.DtoActorFilm;
-import es.salesianos.model.PeliculaActor;
+import es.salesianos.model.FilmActor;
 
 public class PeliculaActorRepository {
 	
@@ -19,7 +19,7 @@ public class PeliculaActorRepository {
 	AbstractConnection manager = new H2Connection();
 	private static final Logger log = LogManager.getLogger(ActorRepository.class);
 
-	public void insert(PeliculaActor peliculaActor) {
+	public void insert(FilmActor peliculaActor) {
 		Connection conn = manager.open(jdbcUrl);
 		PreparedStatement preparedStatement = null;
 		try {

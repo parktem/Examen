@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import es.salesianos.model.DtoActorFilm;
-import es.salesianos.model.PeliculaActor;
 import es.salesianos.service.PeliculaActorService;
 
 public class SearchRoleServlet extends HttpServlet {

@@ -2,10 +2,7 @@ package es.salesianos.service;
 
 import java.util.List;
 
-import es.salesianos.model.Actor;
 import es.salesianos.model.Pelicula;
-import es.salesianos.model.PeliculaActor;
-import es.salesianos.repository.ActorRepository;
 import es.salesianos.repository.PeliculaRepository;
 
 public class PeliculaService {

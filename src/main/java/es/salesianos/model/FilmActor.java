@@ -1,7 +1,7 @@
 package es.salesianos.model;
 
 
-public class PeliculaActor {
+public class FilmActor {
 
 	private int cache;
 	private String role;
