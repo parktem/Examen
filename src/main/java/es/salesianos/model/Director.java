@@ -1,6 +1,5 @@
 package es.salesianos.model;
 
-
 public class Director extends BaseEntity{
 	
 	private String name;

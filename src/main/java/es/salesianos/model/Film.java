@@ -4,8 +4,6 @@ public class Film extends BaseEntity{
 
 	private String title;
 	private Integer codDirector;
-	private Director director;
-	
 	
 	public Integer getCodDirector() {
 		return codDirector;
@@ -19,11 +17,4 @@ public class Film extends BaseEntity{
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public Director getDirector() {
-		return director;
-	}
-	public void setDirector(Director director) {
-		this.director = director;
-	}
-	
 }

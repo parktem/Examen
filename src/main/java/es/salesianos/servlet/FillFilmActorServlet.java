@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import es.salesianos.model.FilmActor;
-import es.salesianos.model.assembler.PeliculaActorAssembler;
+import es.salesianos.model.assembler.FilmActorAssembler;
 import es.salesianos.service.FilmActorService;
 
 public class FillFilmActorServlet extends HttpServlet {
@@ -21,8 +21,8 @@ public class FillFilmActorServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		FilmActor peliculaActor = PeliculaActorAssembler.assemblePeliculaActorFrom(req);
-		service.insert(peliculaActor);
+		FilmActor filmActor = FilmActorAssembler.assembleFilmActorFrom(req);
+		service.insert(filmActor);
 		doAction(req, resp);
 	}
  

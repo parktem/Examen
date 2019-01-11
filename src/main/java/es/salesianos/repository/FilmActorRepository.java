@@ -28,7 +28,7 @@ public class FilmActorRepository {
 			preparedStatement.setInt(1, filmActor.getCache());
 			preparedStatement.setString(2, filmActor.getRole());
 			preparedStatement.setInt(3, filmActor.getCodActor());
-			preparedStatement.setInt(4, filmActor.getCodPelicula());
+			preparedStatement.setInt(4, filmActor.getCodFilm());
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
 			log.error(e);

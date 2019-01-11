@@ -4,12 +4,11 @@ import javax.servlet.http.HttpServletRequest;
 
 import es.salesianos.model.Film;
 
-public class PeliculaAssembler {
+public class FilmAssembler {
 
-	public static Film assemblePeliculaFrom(HttpServletRequest req) {
+	public static Film assembleFilmFrom(HttpServletRequest req) {
 		Film film = new Film();
 		String codDirector = req.getParameter("codDirector");
-		System.out.println(codDirector + " llega");
 		if(null != codDirector) {
 			film.setCodDirector(Integer.parseInt(codDirector));
 		}
