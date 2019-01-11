@@ -19,9 +19,6 @@ List<Film> listAllFilms = (List<Film>)request.getAttribute("selectAllFilms");
 		<input type="submit">
 	</form>
 	
-	
-	
-	
 <table border="1">
 	<thead>
 		<tr>

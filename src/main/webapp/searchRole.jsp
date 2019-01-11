@@ -17,7 +17,7 @@
 	%>
 	
 	<form action="/searchRole" method="post">
-	<span>Buscar por personaje: <input type="text" name="role"></span>
+	<span>Search by role: <input type="text" name="role"></span>
 	<br />
 	<input type="submit">
 	</form>
