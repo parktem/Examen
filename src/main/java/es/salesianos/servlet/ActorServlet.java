@@ -30,17 +30,14 @@ public class ActorServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String codString = req.getParameter("cod");
 		if (codString != null) {
-			Actor actor = new Actor();
-			int cod = Integer.parseInt(codString);
-			actor.setCod(cod);
-			service.delete(actor);
+			service.delete(codString);
 		}
 		doAction(req, resp);
 	}
 
 	private void doAction(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		String parameter = req.getParameter("beginDate");
-		if (parameter != null) {
+		String beginDate = req.getParameter("beginDate");
+		if (beginDate != null) {
 			List<Actor> listAllActors = service.filterAllActor(req);
 			req.setAttribute("listAllActores", listAllActors);
 		}

@@ -17,7 +17,10 @@ public class FilmService {
 		repository.insert(film);
 	}
 	
-	public void delete(Film film) {
+	public void delete(String codString) {
+		Film film = new Film();
+		int cod = Integer.parseInt(codString);
+		film.setCod(cod);
 		repository.delete(film);
 	}
 	

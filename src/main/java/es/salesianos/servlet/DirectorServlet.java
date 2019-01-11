@@ -28,12 +28,8 @@ public class DirectorServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String codString = req.getParameter("cod");
-
 		if (null != codString) {
-			Director director = new Director();
-			int cod = Integer.parseInt(codString);
-			director.setCod(cod);
-			service.delete(director);
+			service.delete(codString);
 		}
 		doAction(req, resp);
 	}

@@ -9,13 +9,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import es.salesianos.model.Director;
-import es.salesianos.service.ActorService;
+import es.salesianos.service.DirectorService;
 
 public class SearchActorServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	private ActorService service = new ActorService();
+	private DirectorService service = new DirectorService();
  
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -30,8 +30,8 @@ public class SearchActorServlet extends HttpServlet {
 	private void doAction(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		String name = req.getParameter("name");
 		if (name != null) {
-			Director listFilterActor = service.filterAllDirector(name);
-			req.setAttribute("listFilterActor", listFilterActor);
+			Director listFilterDirector = service.filterAllDirector(name);
+			req.setAttribute("listFilterDirector", listFilterDirector);
 		}
 		redirect(req, resp);
 	}

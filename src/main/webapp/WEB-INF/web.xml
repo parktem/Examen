@@ -31,7 +31,7 @@
 
 	<servlet>
 		<servlet-name>FillFilmActorServlet</servlet-name>
-		<servlet-class>es.salesianos.servlet.FilmActorServlet
+		<servlet-class>es.salesianos.servlet.FillFilmActorServlet
 		</servlet-class>
 	</servlet>
 

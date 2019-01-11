@@ -6,7 +6,6 @@ import es.salesianos.model.Film;
 
 public class PeliculaAssembler {
 
-	
 	public static Film assemblePeliculaFrom(HttpServletRequest req) {
 		Film film = new Film();
 		String codDirector = req.getParameter("codDirector");

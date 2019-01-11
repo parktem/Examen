@@ -57,16 +57,16 @@ public class FilmRepository {
 	public List<Film> selectAllFilm() {
 		Connection conn = manager.open(jdbcUrl);
 		PreparedStatement preparedStatement = null;
-		List<Film> list = new ArrayList<Film>();
+		List<Film> listFilm = new ArrayList<Film>();
 		try {
 			preparedStatement = conn.prepareStatement("SELECT * FROM FILM");
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
-				Film film = new Film();
-				film.setCod(resultSet.getInt(1));
-				film.setTitle(resultSet.getString(2));
-				film.setCodDirector(resultSet.getInt(3));
-				list.add(film);
+				Film filmfromDataBase = new Film();
+				filmfromDataBase.setCod(resultSet.getInt(1));
+				filmfromDataBase.setTitle(resultSet.getString(2));
+				filmfromDataBase.setCodDirector(resultSet.getInt(3));
+				listFilm.add(filmfromDataBase);
 			}
 		} catch (SQLException e) {
 			log.error(e);
@@ -75,7 +75,7 @@ public class FilmRepository {
 			manager.close(preparedStatement);
 			manager.close(conn);
 		}
-		return list;
+		return listFilm;
 	}
 	
 }

@@ -24,8 +24,14 @@ public class DirectorService {
 		repository.insert(director);
 	}
 	
-	public void delete(Director director) {
+	public void delete(String codString) {
+		Director director = new Director();
+		int cod = Integer.parseInt(codString);
+		director.setCod(cod);
 		repository.delete(director);
 	}
 	
+	public Director filterAllDirector(String name) {
+		return repository.filterAllDirector(name);
+	}
 }

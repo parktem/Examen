@@ -6,7 +6,6 @@ import es.salesianos.model.Actor;
 
 public class ActorAssembler {
 
-	
 	public static Actor assembleActorFrom(HttpServletRequest req) {
 		Actor actor = new Actor();
 		String year = req.getParameter("year");

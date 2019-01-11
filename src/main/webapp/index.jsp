@@ -9,12 +9,12 @@
 </head>
 <body>
 <div>
-	<a href="/film">Peliculas:</a><br/>
-	<a href="/director">Directores:</a><br/>
-	<a href="/actor">Actores:</a><br/>
-	<a href="/filmactor">Asociar peliculas con actores:</a><br/>
-	<a href="/searchRole">Buscador de personaje</a><br/>
-	<a href="/searchActor">Buscador de Director por Actor</a><br/>
+	<a href="/film">Films:</a><br/>
+	<a href="/director">Directors:</a><br/>
+	<a href="/actor">Actors:</a><br/>
+	<a href="/filmactor">Link films with actors:</a><br/>
+	<a href="/searchRole">Search by role</a><br/>
+	<a href="/searchActor">Search by actor</a><br/>
 </div>
 
 </body>

@@ -5,13 +5,11 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import es.salesianos.model.Actor;
-import es.salesianos.model.Director;
 import es.salesianos.repository.ActorRepository;
 
 public class ActorService {
 
 	private ActorRepository repository = new ActorRepository();
-	
 	
 	public List<Actor> filterAllActor(HttpServletRequest req) {
 		int beginDate = Integer.parseInt(req.getParameter("beginDate"));
@@ -27,12 +25,10 @@ public class ActorService {
 		repository.insert(actor);
 	}
 	
-	public void delete(Actor actor) {
+	public void delete(String codString) {
+		Actor actor = new Actor();
+		int cod = Integer.parseInt(codString);
+		actor.setCod(cod);
 		repository.delete(actor);
 	}
-	
-	public Director filterAllDirector(String name) {
-		return repository.filterAllDirector(name);
-	}
-	
 }

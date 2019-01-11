@@ -12,7 +12,6 @@ import org.apache.logging.log4j.Logger;
 
 import es.salesianos.connection.AbstractConnection;
 import es.salesianos.connection.H2Connection;
-import es.salesianos.model.Actor;
 import es.salesianos.model.Director;
 
 public class DirectorRepository {
@@ -35,7 +34,6 @@ public class DirectorRepository {
 			manager.close(preparedStatement);
 			manager.close(conn);
 		}
-
 	}
 
 	public void delete(Director director) {
@@ -52,21 +50,20 @@ public class DirectorRepository {
 			manager.close(preparedStatement);
 			manager.close(conn);
 		}
-
 	}
 
 	public List<Director> selectAllDirector() {
 		Connection conn = manager.open(jdbcUrl);
 		PreparedStatement preparedStatement = null;
-		List<Director> list = new ArrayList<Director>();
+		List<Director> listDirector = new ArrayList<Director>();
 		try {
 			preparedStatement = conn.prepareStatement("SELECT * FROM DIRECTOR");
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
-				Actor director = new Actor();
-				director.setCod(resultSet.getInt(1));
-				director.setName(resultSet.getString(2));
-				list.add(director);
+				Director directorfromDataBase = new Director();
+				directorfromDataBase.setCod(resultSet.getInt(1));
+				directorfromDataBase.setName(resultSet.getString(2));
+				listDirector.add(directorfromDataBase);
 			}
 		} catch (SQLException e) {
 			log.error(e);
@@ -75,7 +72,35 @@ public class DirectorRepository {
 			manager.close(preparedStatement);
 			manager.close(conn);
 		}
-		return list;
+		return listDirector;
+	}
+	
+	public Director filterAllDirector(String name) {
+		Connection conn = manager.open(jdbcUrl);
+		PreparedStatement preparedStatement = null;
+		Director director = null;
+		try {
+			preparedStatement = conn.prepareStatement("SELECT DIRECTOR.NAME" + 
+					" FROM (((ACTOR" + 
+					" INNER JOIN FILMACTOR ON FILMACTOR.CODACTOR = ACTOR.COD)" + 
+					" INNER JOIN FILM ON FILM.COD = FILMACTOR.CODFILM)" + 
+					" INNER JOIN DIRECTOR ON DIRECTOR.COD = FILM.CODOWNER)" + 
+					" WHERE ACTOR.NAME = (?)");
+			preparedStatement.setString(1, name);
+			ResultSet resultSet = preparedStatement.executeQuery();
+			while (resultSet.next()) {
+				Director directorfromDataBase = new Director();
+				directorfromDataBase.setName(resultSet.getString(1));
+				director = directorfromDataBase;
+			}			
+		} catch (SQLException e) {
+			log.error(e);
+			throw new RuntimeException(e);
+		} finally {
+			manager.close(preparedStatement);
+			manager.close(conn);
+		}
+		return director;
 	}
 
 }

@@ -13,7 +13,7 @@
 <body>
 
 	<%
-		Director listFilterActor = (Director)request.getAttribute("listFilterActor");
+		Director listFilterDirector = (Director)request.getAttribute("listFilterDirector");
 	%>
 
 	<form action="/searchActor" method="post">
@@ -31,7 +31,7 @@
 		</thead>
 		<tbody>
 			<tr>
-					<c:forEach var="name" items="${listFilterActor.name}">
+					<c:forEach var="name" items="${listFilterDirector.name}">
 					<tr>
 					<td>
 						<c:out value="${name}" />
