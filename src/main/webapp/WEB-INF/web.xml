@@ -18,8 +18,8 @@
 	</servlet>
 
 	<servlet>
-		<servlet-name>PeliculaActorServlet</servlet-name>
-		<servlet-class>es.salesianos.servlet.PeliculaActorServlet
+		<servlet-name>FilmActorServlet</servlet-name>
+		<servlet-class>es.salesianos.servlet.FilmActorServlet
 		</servlet-class>
 	</servlet>
 
@@ -30,8 +30,8 @@
 	</servlet>
 
 	<servlet>
-		<servlet-name>FillPeliculaActorServlet</servlet-name>
-		<servlet-class>es.salesianos.servlet.FillPeliculaActorServlet
+		<servlet-name>FillFilmActorServlet</servlet-name>
+		<servlet-class>es.salesianos.servlet.FilmActorServlet
 		</servlet-class>
 	</servlet>
 
@@ -65,8 +65,8 @@
 	</servlet-mapping>
 
 	<servlet-mapping>
-		<servlet-name>PeliculaActorServlet</servlet-name>
-		<url-pattern>/peliculaactor</url-pattern>
+		<servlet-name>FilmActorServlet</servlet-name>
+		<url-pattern>/filmactor</url-pattern>
 	</servlet-mapping>
 
 	<servlet-mapping>
@@ -75,8 +75,8 @@
 	</servlet-mapping>
 
 	<servlet-mapping>
-		<servlet-name>FillPeliculaActorServlet</servlet-name>
-		<url-pattern>/fillPeliculaActor</url-pattern>
+		<servlet-name>FillFilmActorServlet</servlet-name>
+		<url-pattern>/fillFilmActor</url-pattern>
 	</servlet-mapping>
 
 	<servlet-mapping>

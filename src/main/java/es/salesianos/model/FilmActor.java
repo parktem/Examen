@@ -7,7 +7,6 @@ public class FilmActor {
 	private String role;
 	private int codPelicula;
 	private int codActor;
-	private Actor actor;
 	
 	public int getCache() {
 		return cache;
@@ -33,17 +32,4 @@ public class FilmActor {
 	public void setCodActor(int codActor) {
 		this.codActor = codActor;
 	}
-	public Actor getActor() {
-		return actor;
-	}
-	public void setActor(Actor actor) {
-		this.actor = actor;
-	}
-	
-	
-	
-	
-	
-	
-	
 }

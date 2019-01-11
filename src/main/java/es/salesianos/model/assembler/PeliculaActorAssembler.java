@@ -8,11 +8,11 @@ public class PeliculaActorAssembler {
 
 	public static FilmActor assemblePeliculaActorFrom(HttpServletRequest req) {
 		FilmActor peliculaActor = new FilmActor();
-		String codPelicula = req.getParameter("codPelicula");
+		String codFilm = req.getParameter("codFilm");
 		String codActor = req.getParameter("codActor");
 		String cache = req.getParameter("cache");
 		String role = req.getParameter("role");
-		peliculaActor.setCodPelicula(Integer.parseInt(codPelicula));
+		peliculaActor.setCodPelicula(Integer.parseInt(codFilm));
 		peliculaActor.setCodActor(Integer.parseInt(codActor));
 		peliculaActor.setCache(Integer.parseInt(cache));
 		peliculaActor.setRole(role);

@@ -13,31 +13,32 @@
 <body>
 
 	<%
-	DtoActorFilm selectPeliculaActor = (DtoActorFilm)request.getAttribute("selectPeliculaActor");
+		Director listFilterActor = (Director)request.getAttribute("listFilterActor");
 	%>
-	
-	<form action="/searchRole" method="post">
-	<span>Buscar por personaje: <input type="text" name="role"></span>
-	<br />
-	<input type="submit">
+
+	<form action="/searchActor" method="post">
+		<span>Search Actor: <input type="text" name="name"></span>
+		<br /> <input type="submit">
 	</form>
 	<br />
 	<br />
-	
+
 	<table border="1">
 		<thead>
 			<tr>
-				<td>Pelicula en la que participó</td>
-				<td>Nombre de Actor</td>
-				<td>Año de nacimiento</td>
+				<td>Directores de peliculas en las que ha participado</td>
 			</tr>
 		</thead>
 		<tbody>
-				<tr>
-					<td><c:out value="${selectPeliculaActor.title}" /></td>
-					<td><c:out value="${selectPeliculaActor.name}" /></td>
-					<td><c:out value="${selectPeliculaActor.year}" /></td>
-				</tr>
+			<tr>
+					<c:forEach var="name" items="${listFilterActor.name}">
+					<tr>
+					<td>
+						<c:out value="${name}" />
+					</td>
+					</tr>
+					</c:forEach>
+			</tr>
 		</tbody>
 	</table>
 

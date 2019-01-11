@@ -2,21 +2,21 @@ package es.salesianos.model.assembler;
 
 import javax.servlet.http.HttpServletRequest;
 
-import es.salesianos.model.Pelicula;
+import es.salesianos.model.Film;
 
 public class PeliculaAssembler {
 
 	
-	public static Pelicula assemblePeliculaFrom(HttpServletRequest req) {
-		Pelicula pelicula = new Pelicula();
+	public static Film assemblePeliculaFrom(HttpServletRequest req) {
+		Film film = new Film();
 		String codDirector = req.getParameter("codDirector");
 		System.out.println(codDirector + " llega");
 		if(null != codDirector) {
-			pelicula.setCodDirector(Integer.parseInt(codDirector));
+			film.setCodDirector(Integer.parseInt(codDirector));
 		}
 		String title = req.getParameter("title");
-		pelicula.setTitle(title);
-		return pelicula;
+		film.setTitle(title);
+		return film;
 	}
 	
 }

@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import es.salesianos.model.Actor;
 import es.salesianos.model.Director;
 import es.salesianos.service.ActorService;
 
@@ -38,7 +37,7 @@ public class SearchActorServlet extends HttpServlet {
 	}
 
 	protected void redirect(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/buscadorActor.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/searchActor.jsp");
 		dispatcher.forward(req, resp);
 	}
 }

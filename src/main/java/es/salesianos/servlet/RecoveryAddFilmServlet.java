@@ -10,10 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import es.salesianos.model.Actor;
-import es.salesianos.model.Pelicula;
+import es.salesianos.model.Film;
 import es.salesianos.model.assembler.PeliculaAssembler;
 import es.salesianos.service.ActorService;
-import es.salesianos.service.PeliculaService;
+import es.salesianos.service.FilmService;
 
 public class RecoveryAddFilmServlet extends HttpServlet {
 
@@ -21,31 +21,31 @@ public class RecoveryAddFilmServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private ActorService actorService = new ActorService();
-	private PeliculaService peliculaService = new PeliculaService();
+	private FilmService peliculaService = new FilmService();
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		Pelicula pelicula = PeliculaAssembler.assemblePeliculaFrom(req);
+		Film pelicula = PeliculaAssembler.assemblePeliculaFrom(req);
 		peliculaService.insert(pelicula);
 		doAction(req, resp);
 	}
  
 	@Override	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String codPelicula = req.getParameter("cod");
+		String codFilm = req.getParameter("cod");
 		
-		req.setAttribute("codPelicula", codPelicula);
+		req.setAttribute("codFilm", codFilm);
 		doAction(req, resp);
 	}
 
 	private void doAction(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		List<Actor> listAllActores = actorService.selectAllActor();
-		req.setAttribute("listAllActores", listAllActores);
+		List<Actor> listAllActors = actorService.selectAllActor();
+		req.setAttribute("listAllActors", listAllActors);
 		redirect(req, resp);
 	}
 
 	protected void redirect(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/seleccionarActor.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/selectActor.jsp");
 		dispatcher.forward(req, resp);
 	}
 }

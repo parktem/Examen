@@ -12,7 +12,7 @@
 	<a href="/film">Peliculas:</a><br/>
 	<a href="/director">Directores:</a><br/>
 	<a href="/actor">Actores:</a><br/>
-	<a href="peliculaactor">Asociar peliculas con actores:</a><br/>
+	<a href="/filmactor">Asociar peliculas con actores:</a><br/>
 	<a href="/searchRole">Buscador de personaje</a><br/>
 	<a href="/searchActor">Buscador de Director por Actor</a><br/>
 </div>

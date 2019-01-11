@@ -39,8 +39,8 @@ public class DirectorServlet extends HttpServlet {
 	}
 
 	private void doAction(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		List<Director> listAllDirectores = service.selectAllDirector();
-		req.setAttribute("listAllDirectores", listAllDirectores);
+		List<Director> listAllDirectors = service.selectAllDirector();
+		req.setAttribute("listAllDirectors", listAllDirectors);
 		redirect(req, resp);
 	}
 

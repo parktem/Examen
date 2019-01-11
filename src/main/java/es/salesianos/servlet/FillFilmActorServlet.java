@@ -10,14 +10,14 @@ import javax.servlet.http.HttpServletResponse;
 
 import es.salesianos.model.FilmActor;
 import es.salesianos.model.assembler.PeliculaActorAssembler;
-import es.salesianos.service.PeliculaActorService;
+import es.salesianos.service.FilmActorService;
 
-public class FillPeliculaActorServlet extends HttpServlet {
+public class FillFilmActorServlet extends HttpServlet {
 
 
 	private static final long serialVersionUID = 1L;
 
-	private PeliculaActorService service = new PeliculaActorService();
+	private FilmActorService service = new FilmActorService();
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -28,9 +28,9 @@ public class FillPeliculaActorServlet extends HttpServlet {
  
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String codPelicula = req.getParameter("codPelicula");
+		String codFilm = req.getParameter("codFilm");
 		String codActor = req.getParameter("codActor");
-		req.setAttribute("codPelicula", codPelicula);
+		req.setAttribute("codFilm", codFilm);
 		req.setAttribute("codActor", codActor);
 		doAction(req, resp);
 	}
@@ -40,7 +40,7 @@ public class FillPeliculaActorServlet extends HttpServlet {
 	}
 
 	protected void redirect(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/FillPeliculaActor.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/fillFilmActor.jsp");
 		dispatcher.forward(req, resp);
 	}
 }

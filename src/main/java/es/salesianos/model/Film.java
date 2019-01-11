@@ -1,6 +1,6 @@
 package es.salesianos.model;
 
-public class Pelicula extends BaseEntity{
+public class Film extends BaseEntity{
 
 	private String title;
 	private Integer codDirector;

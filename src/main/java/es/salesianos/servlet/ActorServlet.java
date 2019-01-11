@@ -41,11 +41,11 @@ public class ActorServlet extends HttpServlet {
 	private void doAction(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		String parameter = req.getParameter("beginDate");
 		if (parameter != null) {
-			List<Actor> listAllActores = service.filterAllActor(req);
-			req.setAttribute("listAllActores", listAllActores);
+			List<Actor> listAllActors = service.filterAllActor(req);
+			req.setAttribute("listAllActores", listAllActors);
 		}
-		List<Actor> listAllActores = service.selectAllActor();
-		req.setAttribute("listAllActores", listAllActores);
+		List<Actor> listAllActors = service.selectAllActor();
+		req.setAttribute("listAllActors", listAllActors);
 		redirect(req, resp);
 	}
 
