@@ -2,8 +2,6 @@ package es.salesianos.service;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-
 import es.salesianos.model.Actor;
 import es.salesianos.repository.ActorRepository;
 
@@ -11,9 +9,7 @@ public class ActorService {
 
 	private ActorRepository repository = new ActorRepository();
 	
-	public List<Actor> filterAllActor(HttpServletRequest req) {
-		int beginDate = Integer.parseInt(req.getParameter("beginDate"));
-		int endDate = Integer.parseInt(req.getParameter("endDate"));
+	public List<Actor> filterAllActor(int beginDate, int endDate) {
 		return repository.filterAllActor(beginDate, endDate);
 	}
 	

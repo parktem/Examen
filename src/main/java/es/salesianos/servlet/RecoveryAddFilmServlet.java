@@ -32,8 +32,8 @@ public class RecoveryAddFilmServlet extends HttpServlet {
  
 	@Override	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String codFilm = req.getParameter("cod");
-		req.setAttribute("codFilm", codFilm);
+		String cod = req.getParameter("cod");
+		req.setAttribute("codFilm", cod);
 		doAction(req, resp);
 	}
 

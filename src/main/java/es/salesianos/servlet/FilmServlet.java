@@ -29,9 +29,9 @@ public class FilmServlet extends HttpServlet {
  
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String codString = req.getParameter("cod");
-		if(null != codString) {
-			service.delete(codString);
+		String cod = req.getParameter("cod");
+		if(null != cod) {
+			service.delete(cod);
 		}
 		doAction(req, resp);
 	}
