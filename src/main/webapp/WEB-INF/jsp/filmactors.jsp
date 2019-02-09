@@ -11,9 +11,6 @@
 </head>
 <body>
 
-<%
-List<Film> listAllFilms = (List<Film>)request.getAttribute("listAllFilms");
-%>
 	
 <table border="1">
 	<thead>

@@ -45,4 +45,12 @@ public class ActorController {
 		return "index";
 	}
 
+	@GetMapping(path = "/recoveryFilm")
+	public ModelAndView recoveryFilm(@RequestParam Integer cod) {
+		ModelAndView model = new ModelAndView("selectActor");
+		model.addObject("codFilm", cod);
+		model.addObject("listAllActors", service.selectAllActor());
+		return model;
+	}
+
 }

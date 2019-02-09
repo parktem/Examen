@@ -37,4 +37,11 @@ public class FilmController {
 		return "index";
 	}
 
+	@GetMapping(path = "/filmActor")
+	public ModelAndView getfilmActor() {
+		ModelAndView model = new ModelAndView("filmactors");
+		model.addObject("listAllFilms", service.selectAllFilm());
+		return model;
+	}
+
 }
