@@ -12,9 +12,6 @@
 </head>
 <body>
 
-	<%
-		Director listFilterDirector = (Director) request.getAttribute("listFilterDirector");
-	%>
 
 	<form action="/searchActor" method="post">
 		<span>Search Actor: <input type="text" name="name"></span> <br />

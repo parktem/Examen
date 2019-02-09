@@ -11,9 +11,6 @@
 </head>
 <body>
 
-<%
-List<Film> listAllFilms = (List<Film>)request.getAttribute("selectAllFilms");
-%>
 	<form action="/insertFilm" method="post">
 		<span>title:</span> <input type="text" name="title"> <br />
 		<input type="submit">

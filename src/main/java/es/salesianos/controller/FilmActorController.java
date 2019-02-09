@@ -24,6 +24,11 @@ public class FilmActorController {
 		return model;
 	}
 
+	@GetMapping(path = "/searchRole")
+	public String getPagesearchRole() {
+		return "searchRole";
+	}
+
 	@PostMapping(path = "/insertFilmActor")
 	public String insertActor(@RequestParam Integer codActor, @RequestParam Integer codFilm, @RequestParam String role,
 			@RequestParam Integer cache) {
@@ -34,6 +39,13 @@ public class FilmActorController {
 		filmActor.setRole(role);
 		service.insert(filmActor);
 		return "index";
+	}
+
+	@PostMapping(path = "/filterRole")
+	public ModelAndView insertActor(@RequestParam String role) {
+		ModelAndView model = new ModelAndView("searchRole");
+		model.addObject("selectFilmActor", service.filterAllFilmActor(role));
+		return model;
 	}
 
 }
