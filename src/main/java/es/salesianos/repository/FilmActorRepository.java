@@ -7,14 +7,16 @@ import java.sql.SQLException;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.stereotype.Repository;
 
 import es.salesianos.connection.AbstractConnection;
 import es.salesianos.connection.H2Connection;
 import es.salesianos.model.DtoActorFilm;
 import es.salesianos.model.FilmActor;
 
+@Repository
 public class FilmActorRepository {
-	
+
 	private static final String jdbcUrl = "jdbc:h2:file:./src/main/resources/test";
 	AbstractConnection manager = new H2Connection();
 	private static final Logger log = LogManager.getLogger(ActorRepository.class);
@@ -38,17 +40,15 @@ public class FilmActorRepository {
 			manager.close(conn);
 		}
 	}
-	
+
 	public DtoActorFilm filterAllFilmActor(String role) {
 		Connection conn = manager.open(jdbcUrl);
 		PreparedStatement preparedStatement = null;
 		DtoActorFilm dto = null;
 		try {
-			preparedStatement = conn.prepareStatement("SELECT TITTLE, NAME, YEAROFBIRTHDATE" + 
-					" FROM ((FILMACTOR" + 
-					" INNER JOIN FILM ON FILM.COD = FILMACTOR.CODFILM)" + 
-					" INNER JOIN ACTOR ON ACTOR.COD = FILMACTOR.CODACTOR)" + 
-					" WHERE FILMACTOR.ROLE = (?)");
+			preparedStatement = conn.prepareStatement("SELECT TITTLE, NAME, YEAROFBIRTHDATE" + " FROM ((FILMACTOR"
+					+ " INNER JOIN FILM ON FILM.COD = FILMACTOR.CODFILM)"
+					+ " INNER JOIN ACTOR ON ACTOR.COD = FILMACTOR.CODACTOR)" + " WHERE FILMACTOR.ROLE = (?)");
 			preparedStatement.setString(1, role);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
@@ -67,7 +67,5 @@ public class FilmActorRepository {
 		}
 		return dto;
 	}
-	
-	
-	
+
 }
