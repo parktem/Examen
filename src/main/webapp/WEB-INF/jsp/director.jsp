@@ -16,7 +16,7 @@ List<Film> listAllDirectors = (List<Film>)request.getAttribute("listAllDirectors
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
-	<form action="/director" method="post">
+	<form action="/insertDirector" method="post">
 		<span>name:</span> <input type="text" name="name"> <br />
 		<input type="submit">
 	</form>
@@ -35,7 +35,7 @@ List<Film> listAllDirectors = (List<Film>)request.getAttribute("listAllDirectors
 			<tr>
 				<td><c:out value="${director.cod}"/> </td>
 				<td><c:out value="${director.name}"/> </td>
-				<td><a href="/director?cod=${director.cod}">Delete</a> </td>
+				<td><a href="/deleteDirector?cod=${director.cod}">Delete</a> </td>
 	    	</tr>
 		</c:forEach>
 	</tbody>
